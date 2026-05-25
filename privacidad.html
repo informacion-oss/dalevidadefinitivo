@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Política de Privacidad | DaleVida</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lexend:wght@400;500;600;700&family=Playfair+Display:wght@400;700;800&family=DM+Sans:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* ============================================================
+   DaleVida - Shared Styles
+   ============================================================ */
+
+:root {
+  --brand-dark: #2B5A3E;
+  --brand-light: #7DC142;
+  --brand-cream: #F7F5EE;
+  --brand-bg: #f7fbf1;
+  --brand-text: #191d17;
+  --brand-muted: #41493e;
+  --brand-border: #c0c9bb;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', 'Lexend', system-ui, sans-serif;
+  background-color: var(--brand-cream);
+  color: var(--brand-text);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+}
+
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+.font-lexend  { font-family: 'Lexend', sans-serif; }
+.font-dmsans  { font-family: 'DM Sans', sans-serif; }
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+.icon-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+/* Buttons - minimum tap target */
+button, a.btn {
+  min-height: 44px;
+}
+
+/* ----------------- ORGANIC BLOBS ----------------- */
+.organic-blob {
+  position: fixed;
+  filter: blur(80px);
+  opacity: 0.12;
+  border-radius: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ----------------- ANNOUNCEMENT BAR ----------------- */
+.announcement-bar {
+  background-color: var(--brand-dark);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px 16px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 70;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .announcement-bar { font-size: 12px; }
+}
+
+/* ----------------- NAVBAR ----------------- */
+.site-nav {
+  position: fixed;
+  top: 36px;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid #f3f4f1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  z-index: 60;
+  height: 72px;
+}
+
+.site-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 24px;
+}
+
+.nav-logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--brand-dark);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.nav-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #525252;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 8px 0;
+}
+
+.nav-link:hover { color: var(--brand-dark); }
+
+.nav-link.active {
+  color: var(--brand-light);
+  border-bottom: 2px solid var(--brand-light);
+}
+
+.nav-cta {
+  background: var(--brand-dark);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.nav-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--brand-dark);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 999px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.nav-icon-btn:hover { background: #f3f5ef; }
+
+.nav-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--brand-light);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  transition: all 0.2s;
+}
+
+/* ----------------- MOBILE MENU ----------------- */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 380px;
+  background: white;
+  z-index: 90;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  box-shadow: -8px 0 24px rgba(0,0,0,0.12);
+}
+
+.mobile-menu-overlay.active { transform: translateX(0); }
+
+.mobile-menu-link {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f5ec;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #41493e;
+  text-decoration: none;
+}
+
+.mobile-menu-link.active { color: var(--brand-light); }
+
+/* ----------------- CART PANEL ----------------- */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 95%;
+  max-width: 420px;
+  background: white;
+  z-index: 95;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -12px 0 32px rgba(0,0,0,0.15);
+}
+
+.cart-panel.active { transform: translateX(0); }
+
+.cart-header {
+  padding: 24px;
+  border-bottom: 1px solid #f1f5ec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 24px;
+  color: #717a6d;
+  min-height: 220px;
+}
+
+.cart-footer {
+  padding: 20px 24px 24px;
+  border-top: 1px solid #f1f5ec;
+  background: #fafbf6;
+}
+
+.cart-finalize-btn {
+  width: 100%;
+  background: var(--brand-dark);
+  color: white;
+  padding: 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(43, 90, 62, 0.25);
+}
+
+.cart-finalize-btn:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(43, 90, 62, 0.35); }
+
+/* ----------------- OVERLAY ----------------- */
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+  z-index: 80;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.overlay-backdrop.active { opacity: 1; pointer-events: auto; }
+
+/* ----------------- NOTIFICATION ----------------- */
+.cart-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: var(--brand-dark);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 999px;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.cart-notification.show { transform: translateX(-50%) translateY(0); }
+
+@media (min-width: 768px) {
+  .cart-notification {
+    left: auto;
+    right: 24px;
+    transform: translateY(120px);
+  }
+  .cart-notification.show { transform: translateY(0); }
+}
+
+/* ----------------- FLOATING CART (Mobile) ----------------- */
+.floating-cart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: var(--brand-dark);
+  color: white;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(43, 90, 62, 0.4);
+  z-index: 50;
+  transition: transform 0.2s;
+}
+
+.floating-cart:hover { transform: scale(1.08); }
+
+.floating-cart-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--brand-light);
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  transition: all 0.2s;
+}
+
+/* ----------------- FOOTER ----------------- */
+.site-footer {
+  background: var(--brand-dark);
+  color: white;
+  padding: 64px 24px 32px;
+  margin-top: 80px;
+}
+
+.site-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-link {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+  display: inline-block;
+  padding: 4px 0;
+}
+
+.footer-link:hover { color: white; }
+
+/* ----------------- PRODUCT CARD ----------------- */
+.product-card {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #ebede5;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(43, 90, 62, 0.18);
+}
+
+.product-card-image {
+  aspect-ratio: 1 / 1;
+  background: #f7faf3;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.product-card-image img {
+  height: 90%;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #caa900;
+  color: #221b00;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(202, 169, 0, 0.3);
+}
+
+.product-fav-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border: none;
+  border-radius: 999px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--brand-dark);
+  transition: all 0.2s;
+  z-index: 2;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-fav-btn:hover { background: white; transform: scale(1.1); }
+
+.product-fav-btn.active { color: #ef4444; }
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.product-rating .material-symbols-outlined {
+  font-size: 16px;
+  color: var(--brand-light);
+  font-variation-settings: 'FILL' 1;
+}
+
+.product-rating .empty { color: #d4d4d4; font-variation-settings: 'FILL' 0; }
+
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #525252;
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.product-tag {
+  background: #f1f5ec;
+  color: #717a6d;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.product-price {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--brand-dark);
+}
+
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  background: #f7faf3;
+  border-radius: 999px;
+  padding: 2px 4px;
+  border: 1px solid #e0e4db;
+}
+
+.qty-stepper button {
+  background: transparent;
+  border: none;
+  color: var(--brand-dark);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+.qty-stepper button:hover { background: white; }
+
+.qty-stepper .qty-value {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--brand-dark);
+}
+
+.btn-primary {
+  background: var(--brand-dark);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(43, 90, 62, 0.25); }
+
+.btn-secondary {
+  background: var(--brand-light);
+  color: var(--brand-dark);
+  border: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.btn-secondary:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(125, 193, 66, 0.35); }
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--brand-dark);
+  color: var(--brand-dark);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.btn-outline:hover { background: #f7faf3; }
+
+/* Benefit panel (Productos page) */
+.benefit-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, margin-top 0.3s ease-out;
+}
+
+.benefit-panel.expanded {
+  max-height: 240px;
+  margin-top: 12px;
+}
+
+.benefit-btn .chevron { transition: transform 0.3s; }
+.benefit-btn.active .chevron { transform: rotate(180deg); }
+
+/* ----------------- MAIN PAGE PADDING ----------------- */
+main {
+  padding-top: 108px; /* 36 announcement + 72 nav */
+}
+
+@media (max-width: 768px) {
+  main { padding-top: 108px; }
+}
+
+/* ----------------- UTILITIES ----------------- */
+.fade-in { animation: fadeIn 0.4s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.container { max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+
+</style>
+</head>
+<body>
+
+<div class="announcement-bar"><span>ENVÍO GRATIS EN PEDIDOS SUPERIORES A 40€ · SOLO 4,99€ EN PEDIDOS INFERIORES</span></div>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-logo">DaleVida</a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Quiénes Somos</a>
+      <a href="productos.html" class="nav-link">Nuestros Productos</a>
+      <a href="resenas.html" class="nav-link">Reseñas</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </div>
+    <div class="flex items-center gap-2 md:gap-3">
+      <button class="nav-icon-btn" onclick="toggleCart()"><span class="material-symbols-outlined">shopping_bag</span><span class="nav-badge opacity-0 scale-0" data-cart-count>0</span></button>
+      <button class="nav-icon-btn hidden sm:inline-flex"><span class="material-symbols-outlined">person</span></button>
+      <a href="productos.html" class="nav-cta hidden lg:inline-flex">Comprar Ahora</a>
+      <button class="nav-icon-btn lg:hidden" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">menu</span></button>
+    </div>
+  </div>
+</nav>
+
+<aside id="mobile-menu" class="mobile-menu-overlay">
+  <div class="flex justify-between items-center mb-8">
+    <span class="nav-logo">DaleVida</span>
+    <button class="nav-icon-btn" onclick="closeMobileMenu()"><span class="material-symbols-outlined">close</span></button>
+  </div>
+  <nav class="flex-1">
+    <a href="index.html" class="mobile-menu-link">Quiénes Somos</a>
+    <a href="productos.html" class="mobile-menu-link">Nuestros Productos</a>
+    <a href="resenas.html" class="mobile-menu-link">Reseñas</a>
+    <a href="contacto.html" class="mobile-menu-link">Contacto</a>
+  </nav>
+  <div class="mt-6"><a href="productos.html" class="nav-cta w-full">Comprar Ahora</a></div>
+</aside>
+
+<main class="pb-20 px-4 md:px-6">
+  <div class="container max-w-[850px]">
+    <header class="mb-12 fade-in">
+      <span class="inline-block bg-[#7DC142]/15 text-[#2B5A3E] px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest mb-5">Legal · Transparencia</span>
+      <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#2B5A3E] leading-tight mb-3">Política de Privacidad</h1>
+      <div class="h-1 w-20 bg-[#7DC142] rounded-full"></div>
+    </header>
+
+    <div class="space-y-6">
+      <section class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-[#c0c9bb]/30">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[#2B5A3E] bg-[#7DC142]/20 p-2 rounded-full">database</span>
+          <h2 class="font-playfair text-2xl font-bold text-[#2B5A3E]">Datos recogidos</h2>
+        </div>
+        <p class="text-[#41493e] leading-relaxed">
+          En DaleVida, recopilamos únicamente la información necesaria para brindarle una experiencia de bienestar premium. Esto incluye datos identificativos (nombre, apellidos), datos de contacto (email, teléfono, dirección de envío) y datos de navegación a través de cookies.
+        </p>
+      </section>
+
+      <section class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-[#c0c9bb]/30">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[#2B5A3E] bg-[#7DC142]/20 p-2 rounded-full">target</span>
+          <h2 class="font-playfair text-2xl font-bold text-[#2B5A3E]">Finalidad</h2>
+        </div>
+        <p class="text-[#41493e] leading-relaxed mb-4">Utilizamos sus datos personales con los siguientes objetivos:</p>
+        <ul class="list-disc pl-6 space-y-2 text-[#41493e]">
+          <li>Gestión y procesamiento de pedidos de productos naturales.</li>
+          <li>Envío de comunicaciones comerciales sobre novedades y promociones (previo consentimiento).</li>
+          <li>Resolución de consultas a través de nuestro servicio de atención al cliente.</li>
+          <li>Análisis estadístico para mejora de nuestra gama de productos.</li>
+        </ul>
+      </section>
+
+      <section class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-[#c0c9bb]/30">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[#2B5A3E] bg-[#7DC142]/20 p-2 rounded-full">gavel</span>
+          <h2 class="font-playfair text-2xl font-bold text-[#2B5A3E]">Legitimación</h2>
+        </div>
+        <p class="text-[#41493e] leading-relaxed">
+          El tratamiento de sus datos se basa legalmente en la ejecución del contrato de compraventa al adquirir nuestros productos. Para el envío de información comercial, la base legal es el consentimiento explícito que usted nos otorga al suscribirse a nuestro boletín.
+        </p>
+      </section>
+
+      <section class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-[#c0c9bb]/30">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[#2B5A3E] bg-[#7DC142]/20 p-2 rounded-full">history</span>
+          <h2 class="font-playfair text-2xl font-bold text-[#2B5A3E]">Conservación</h2>
+        </div>
+        <p class="text-[#41493e] leading-relaxed">
+          Conservaremos sus datos personales únicamente durante el tiempo necesario para cumplir con las finalidades para las que fueron recogidos, o mientras exista una obligación legal de mantenerlos (típicamente entre 5 y 10 años por motivos fiscales y mercantiles).
+        </p>
+      </section>
+
+      <section class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-[#c0c9bb]/30">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[#2B5A3E] bg-[#7DC142]/20 p-2 rounded-full">verified_user</span>
+          <h2 class="font-playfair text-2xl font-bold text-[#2B5A3E]">Tus derechos</h2>
+        </div>
+        <p class="text-[#41493e] leading-relaxed mb-5">Tienes el control total sobre tu información y puedes ejercer los siguientes derechos en cualquier momento:</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex items-center gap-2 p-3 bg-[#f7faf3] rounded-2xl"><span class="material-symbols-outlined text-[#7DC142] text-[20px] icon-filled">check_circle</span><span class="text-sm font-semibold text-[#2B5A3E]">Acceso a tus datos</span></div>
+          <div class="flex items-center gap-2 p-3 bg-[#f7faf3] rounded-2xl"><span class="material-symbols-outlined text-[#7DC142] text-[20px] icon-filled">check_circle</span><span class="text-sm font-semibold text-[#2B5A3E]">Rectificación</span></div>
+          <div class="flex items-center gap-2 p-3 bg-[#f7faf3] rounded-2xl"><span class="material-symbols-outlined text-[#7DC142] text-[20px] icon-filled">check_circle</span><span class="text-sm font-semibold text-[#2B5A3E]">Supresión (olvido)</span></div>
+          <div class="flex items-center gap-2 p-3 bg-[#f7faf3] rounded-2xl"><span class="material-symbols-outlined text-[#7DC142] text-[20px] icon-filled">check_circle</span><span class="text-sm font-semibold text-[#2B5A3E]">Portabilidad</span></div>
+        </div>
+        <a href="contacto.html" class="btn-primary mt-6 max-w-xs">Contactar con el DPO<span class="material-symbols-outlined">arrow_forward</span></a>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="col-span-2 lg:col-span-1 space-y-5">
+        <div class="text-2xl font-extrabold tracking-tight">DaleVida</div>
+        <p class="text-white/75 text-sm leading-relaxed">Vitalidad natural para un estilo de vida saludable y equilibrado.</p>
+      </div>
+      <div>
+        <h4 class="font-bold uppercase tracking-widest text-xs mb-4">Empresa</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="footer-link">Quiénes Somos</a></li>
+          <li><a href="resenas.html" class="footer-link">Reseñas</a></li>
+          <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold uppercase tracking-widest text-xs mb-4">Tienda</h4>
+        <ul class="space-y-2">
+          <li><a href="productos.html" class="footer-link">Productos</a></li>
+          <li><a href="checkout.html" class="footer-link">Checkout</a></li>
+          <li><a href="devoluciones.html" class="footer-link">Devoluciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold uppercase tracking-widest text-xs mb-4">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="privacidad.html" class="footer-link">Privacidad</a></li>
+          <li><a href="cookies.html" class="footer-link">Cookies</a></li>
+          <li><a href="devoluciones.html" class="footer-link">Devoluciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
+      <p>© 2025 DALEVIDA. Vitalidad en cada gota. Todos los derechos reservados.</p>
+      <p>Hecho con cuidado en España 🇪🇸</p>
+    </div>
+  </div>
+</footer>
+
+<button class="floating-cart lg:hidden" onclick="toggleCart()"><span class="material-symbols-outlined">shopping_bag</span><span class="floating-cart-badge opacity-0 scale-0" data-cart-count>0</span></button>
+
+<aside id="cart-panel" class="cart-panel">
+  <div class="cart-header">
+    <div><h2 class="font-playfair text-2xl font-bold text-[#2B5A3E]">Tu Carrito</h2><p class="text-xs text-neutral-500 mt-0.5"><span data-cart-count>0</span> productos</p></div>
+    <button class="nav-icon-btn" onclick="closeCart()"><span class="material-symbols-outlined">close</span></button>
+  </div>
+  <div class="cart-body" id="cart-items-container">
+    <div class="cart-empty" id="cart-empty-msg">
+      <span class="material-symbols-outlined text-6xl opacity-25 mb-3">shopping_bag</span>
+      <p class="text-base font-semibold mb-2">Tu carrito está vacío</p>
+      <a href="productos.html" class="btn-secondary max-w-[200px]">Ver productos</a>
+    </div>
+  </div>
+  <div class="cart-footer" id="cart-footer">
+    <div id="free-shipping-notice" class="mb-4" style="display:none;"></div>
+    <div class="space-y-2 mb-4 text-sm">
+      <div class="flex justify-between text-neutral-600"><span>Subtotal</span><span class="font-semibold text-[#2B5A3E]" id="cart-subtotal">0,00 €</span></div>
+      <div class="flex justify-between text-neutral-600"><span>Envío</span><span class="font-semibold" id="cart-shipping">—</span></div>
+    </div>
+    <div class="flex justify-between items-baseline mb-5 pt-3 border-t border-neutral-100">
+      <span class="text-sm font-semibold text-neutral-700">TOTAL</span>
+      <span class="font-playfair text-2xl font-bold text-[#2B5A3E]" id="cart-total">0,00 €</span>
+    </div>
+    <a href="checkout.html" class="cart-finalize-btn"><span class="material-symbols-outlined">lock</span><span>Finalizar Compra</span></a>
+  </div>
+</aside>
+
+<div class="overlay-backdrop" id="overlay-backdrop" onclick="closeAllPanels()"></div>
+<script>
+/* ============================================================
+   DaleVida - Shared JavaScript
+   Cart system + Navigation + UI helpers
+   ============================================================ */
+
+// ----------------- PRODUCT CATALOG -----------------
+const PRODUCTS = {
+  "espino-amarillo": {
+    id: "espino-amarillo",
+    name: "Espino Amarillo",
+    price: 16.00,
+    image: "https://lh3.googleusercontent.com/aida/ADBb0uiAKpRvtqzwtt2i0R9rifvLOtX3alGNpznp1OgbFCwETMBpOWlpEGqcrUKu0IliXbrpRpSL-kMHCF1_YypsEUKLn3Mgx51_AN67oce1d6ICqRYmcGLW5ndi0LCR5B21n1geHzBmji8uXdfXaZGni-Rrj4vsJd2-XjV_MAKFW0dMpwYK8EI7EXW7t6zHgQa4bertUqQ4o7EccN2GlpBAsU6pJSXBVIVSyp667u9WIBben8axV8rv-IzbN_gVACRFQRspmzyROShRCw",
+    description: "Omega-7 orgánico de alta pureza para regeneración celular y salud de la piel.",
+    tags: ["60 cápsulas", "500mg", "Vegano"],
+    rating: 5, ratingCount: 20, badge: "Más Popular"
+  },
+  "vitamina-d3-k2": {
+    id: "vitamina-d3-k2",
+    name: "Vitamina D3 + K2",
+    price: 14.00,
+    image: "https://lh3.googleusercontent.com/aida/ADBb0ugVpmLSxBMuuGDHA6KJLk9l8zeQN--GEr2vGnq1E_NMI72GQcZUpRqzFJSSVIf_cSQlbBuZX6US76rsW1oaXXsHeJWK_hgmsTpwzegTsuoZBQ6zdRuO3WEztFoTiaBuGRbdVYHULjwZgGKuSCEZuXN-DSgsmMGtLdh-LSeN8BFrJqcZP4lJoCzDw43ckaMWs-pW5kgvPTTAiPVH1Lh5WdBLli9JUGtt2VJhVy6VrCNqK573HD9noDeQ3FwYMfbMVRgw0PwqoIkQSQ",
+    description: "Sinergia perfecta para absorción de calcio y refuerzo del sistema inmunológico.",
+    tags: ["120 cápsulas", "4000 UI"],
+    rating: 5, ratingCount: 12
+  },
+  "maca-10-1": {
+    id: "maca-10-1",
+    name: "Maca 10:1",
+    price: 15.00,
+    image: "https://lh3.googleusercontent.com/aida/ADBb0uj4SAGEHrA91PhchDCRBxiWk3Wl1OyKihrl6jbQdo8hEeZwg8TRHvirbJ8UqCCT5mRTJocRLP9yNZvMlLWT5itqa5ydB-qRhpz1lX3bMkSuwTc0HPiN5Q2gp3Rox1cx2NG66hFks4yMlqv_-6DXgRv1iHKA-ZuFUKEXt_gf5VzSOBaI7E1hDRFOQh12oQbxYMevhIZAYpUUs7gwjvv0Da2MFkX1rWbL10fCveoYVww5zw22-ZMXD28UoN7_O0CI9iH0cGm_XM22fg",
+    description: "Concentrado de maca andina para vitalidad física, equilibrio hormonal y energía natural.",
+    tags: ["90 cápsulas", "Orgánico"],
+    rating: 4, ratingCount: 8
+  },
+  "nad-resveratrol": {
+    id: "nad-resveratrol",
+    name: "NAD+ Trans Resveratrol",
+    price: 18.00,
+    image: "https://lh3.googleusercontent.com/aida/ADBb0ugBgI4CFn9T6HfA6xJXB7mQajnMAv1D8k8cPLSWIu2f2B0FpgeWlxQC6yNpMCOQ_sN8McRK0I5eP2QYPnHDXNMTN-0oh6XiDvKVkX7zZ-0zo4hekPvJuqr22EqLM4cz9QjS40lBWiHsC4zeFqJe48nTus7lk0Mm-z7ME-Ea1Grs-_di_il6p0uUR_3BRb8km3PRmonrwZZ8CsRSf_f7h8nudtWpI6bglNvvnfupBAkCkJYX6bLl6RJvwYlHCte8NAvFt6QNpgOalg",
+    description: "Fórmula avanzada anti-envejecimiento celular para optimizar la longevidad.",
+    tags: ["60 cápsulas", "Vegano"],
+    rating: 5, ratingCount: 15
+  },
+  "ashwagandha": {
+    id: "ashwagandha",
+    name: "Ashwagandha KSM-66",
+    price: 18.00,
+    image: "https://lh3.googleusercontent.com/aida/ADBb0ug3hXDD2ojlvwWZMRo6_LEWDAwXhFbPdFK6eiW4IUBBrhpSrQIGp9AKpj3uSinFZfvx4jOJhIWT3BNxZB-pKj6lethgWPlwGQSVsYCik57WcLUH7q6GQyHloviXbsxuT4PJ74P0_CL2jINI98zpeKomqRM63JoK6iSsUTSSldjMFDU6euJIb5dLyC2TjMrdZ860Dr1dOqcAXeHq3H7sOTsNYen4AhMrTcUKqB0HKMWDp_RXgWZ6lg-sSjbmAqLHLFn7BSuO4gfkAg",
+    description: "Adaptógeno puro para la reducción del cortisol y gestión del estrés.",
+    tags: ["60 cápsulas", "KSM-66®"],
+    rating: 5, ratingCount: 10
+  },
+  "citrato-magnesio": {
+    id: "citrato-magnesio",
+    name: "Citrato de Magnesio",
+    price: 18.00,
+    image: "https://lh3.googleusercontent.com/aida/ADBb0ujc_cDvlGQD7oyhZwwbfUZbGfyE2Z5fpsck3aLUr9H_bj_wNR71zgiric4KOsckzGXBsBzrteu_3MhznAyxJ-2DOpkbEspf7E6ryqi27nSM7V1lUZ6TMief36Rwlqik_xZttZZaviAU9rrOv94u98sYKJ2yK_hhEiSUKLj4HTLI1Urk2A0Yr899ZKT_pwdRhgFjfdkZmgFHqGVSnucn6K2EhrTA7-VenYHU3zTpTp2a4yemGlSu0MKyAeNZ_dmI_rctD3UB9xWI",
+    description: "Forma altamente biodisponible de magnesio para una absorción óptima.",
+    tags: ["120 cápsulas", "800 mg", "Vegano"],
+    rating: 5, ratingCount: 25
+  }
+};
+
+// ----------------- CART STATE -----------------
+const CART_KEY = "dalevida_cart_v1";
+const SHIPPING_THRESHOLD = 40.00;
+const SHIPPING_COST = 4.99;
+
+function getCart() {
+  try {
+    const raw = localStorage.getItem(CART_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function addToCart(productId, quantity = 1) {
+  const product = PRODUCTS[productId];
+  if (!product) return;
+  const cart = getCart();
+  const existing = cart.find(item => item.id === productId);
+  if (existing) {
+    existing.quantity += quantity;
+  } else {
+    cart.push({ id: productId, name: product.name, price: product.price, image: product.image, quantity });
+  }
+  saveCart(cart);
+  renderCart();
+  showNotification(`${product.name} añadido al carrito`);
+  openCart();
+}
+
+function removeFromCart(productId) {
+  const cart = getCart().filter(item => item.id !== productId);
+  saveCart(cart);
+  renderCart();
+}
+
+function updateCartQuantity(productId, change) {
+  const cart = getCart();
+  const item = cart.find(i => i.id === productId);
+  if (!item) return;
+  item.quantity += change;
+  if (item.quantity <= 0) {
+    removeFromCart(productId);
+  } else {
+    saveCart(cart);
+    renderCart();
+  }
+}
+
+function cartSubtotal() {
+  return getCart().reduce((sum, item) => sum + item.price * item.quantity, 0);
+}
+
+function cartItemCount() {
+  return getCart().reduce((sum, item) => sum + item.quantity, 0);
+}
+
+function formatPrice(value) {
+  return value.toFixed(2).replace('.', ',') + " €";
+}
+
+// ----------------- CART UI RENDERING -----------------
+function renderCart() {
+  const subtotal = cartSubtotal();
+  const itemCount = cartItemCount();
+  const shipping = subtotal >= SHIPPING_THRESHOLD ? 0 : (subtotal > 0 ? SHIPPING_COST : 0);
+  const total = subtotal + shipping;
+
+  // Update cart badges everywhere
+  document.querySelectorAll('[data-cart-count]').forEach(el => {
+    el.textContent = itemCount;
+    if (itemCount > 0) {
+      el.classList.remove('opacity-0', 'scale-0');
+      el.classList.add('opacity-100', 'scale-100');
+    } else {
+      el.classList.add('opacity-0', 'scale-0');
+      el.classList.remove('opacity-100', 'scale-100');
+    }
+  });
+
+  // Update cart items list
+  const itemsContainer = document.getElementById('cart-items-container');
+  const emptyMsg = document.getElementById('cart-empty-msg');
+  const cartFooter = document.getElementById('cart-footer');
+
+  if (itemsContainer) {
+    const cart = getCart();
+    // remove old items
+    itemsContainer.querySelectorAll('.cart-item-row').forEach(el => el.remove());
+
+    if (cart.length === 0) {
+      if (emptyMsg) emptyMsg.style.display = 'flex';
+      if (cartFooter) cartFooter.classList.add('opacity-50', 'pointer-events-none');
+    } else {
+      if (emptyMsg) emptyMsg.style.display = 'none';
+      if (cartFooter) cartFooter.classList.remove('opacity-50', 'pointer-events-none');
+
+      cart.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'cart-item-row flex gap-3 py-4 border-b border-neutral-100 last:border-0';
+        row.innerHTML = `
+          <div class="flex-grow min-w-0">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-bold text-[#2B5A3E] truncate">${item.name}</h4>
+              <button onclick="removeFromCart('${item.id}')" class="material-symbols-outlined text-neutral-400 hover:text-red-500 text-[18px] flex-shrink-0">close</button>
+            </div>
+            <p class="text-xs text-neutral-500 mt-0.5">${formatPrice(item.price)} c/u</p>
+            <div class="flex justify-between items-center mt-2">
+              <div class="flex items-center bg-neutral-100 rounded-full text-xs">
+                <button onclick="updateCartQuantity('${item.id}', -1)" class="material-symbols-outlined text-[14px] p-1.5 hover:text-[#2B5A3E]">remove</button>
+                <span class="mx-2 font-bold text-[#2B5A3E]">${item.quantity}</span>
+                <button onclick="updateCartQuantity('${item.id}', 1)" class="material-symbols-outlined text-[14px] p-1.5 hover:text-[#2B5A3E]">add</button>
+              </div>
+              <span class="text-sm font-bold text-[#2B5A3E]">${formatPrice(item.price * item.quantity)}</span>
+            </div>
+          </div>
+        `;
+        itemsContainer.appendChild(row);
+      });
+    }
+  }
+
+  // Update totals
+  const subtotalEl = document.getElementById('cart-subtotal');
+  if (subtotalEl) subtotalEl.textContent = formatPrice(subtotal);
+
+  const shippingEl = document.getElementById('cart-shipping');
+  if (shippingEl) shippingEl.textContent = subtotal === 0 ? '—' : (shipping === 0 ? 'GRATIS' : formatPrice(shipping));
+  const shippingElColor = document.getElementById('cart-shipping');
+  if (shippingElColor) {
+    shippingElColor.classList.toggle('text-[#7DC142]', shipping === 0 && subtotal > 0);
+  }
+
+  const totalEl = document.getElementById('cart-total');
+  if (totalEl) totalEl.textContent = formatPrice(total);
+
+  // Free shipping notice
+  const notice = document.getElementById('free-shipping-notice');
+  if (notice) {
+    if (subtotal === 0) {
+      notice.style.display = 'none';
+    } else {
+      notice.style.display = 'flex';
+      if (subtotal >= SHIPPING_THRESHOLD) {
+        notice.className = 'flex items-center gap-2 bg-[#7DC142]/10 border border-[#7DC142]/30 rounded-xl p-3 text-[#2B5A3E] text-xs font-semibold';
+        notice.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>¡Tienes ENVÍO GRATIS en este pedido!</span>';
+      } else {
+        const remaining = (SHIPPING_THRESHOLD - subtotal);
+        notice.className = 'flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-xl p-3 text-amber-800 text-xs font-semibold';
+        notice.innerHTML = `<span class="material-symbols-outlined text-[18px]">local_shipping</span><span>Añade <strong>${formatPrice(remaining)}</strong> más para envío GRATIS</span>`;
+      }
+    }
+  }
+}
+
+// ----------------- PANEL TOGGLES -----------------
+function openCart() {
+  const panel = document.getElementById('cart-panel');
+  const backdrop = document.getElementById('overlay-backdrop');
+  if (panel) panel.classList.add('active');
+  if (backdrop) backdrop.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  const panel = document.getElementById('cart-panel');
+  const backdrop = document.getElementById('overlay-backdrop');
+  if (panel) panel.classList.remove('active');
+  if (backdrop && !document.getElementById('mobile-menu')?.classList.contains('active')) {
+    backdrop.classList.remove('active');
+  }
+  if (!document.getElementById('mobile-menu')?.classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
+}
+
+function toggleCart() {
+  const panel = document.getElementById('cart-panel');
+  if (panel && panel.classList.contains('active')) {
+    closeCart();
+  } else {
+    openCart();
+  }
+}
+
+function openMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('overlay-backdrop');
+  if (menu) menu.classList.add('active');
+  if (backdrop) backdrop.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('overlay-backdrop');
+  if (menu) menu.classList.remove('active');
+  if (backdrop && !document.getElementById('cart-panel')?.classList.contains('active')) {
+    backdrop.classList.remove('active');
+  }
+  if (!document.getElementById('cart-panel')?.classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
+}
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  if (menu && menu.classList.contains('active')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+function closeAllPanels() {
+  closeCart();
+  closeMobileMenu();
+}
+
+// ----------------- NOTIFICATIONS -----------------
+function showNotification(message) {
+  let notification = document.getElementById('cart-notification');
+  if (!notification) {
+    notification = document.createElement('div');
+    notification.id = 'cart-notification';
+    notification.className = 'cart-notification';
+    document.body.appendChild(notification);
+  }
+  notification.innerHTML = `<span class="material-symbols-outlined">check_circle</span><span>${message}</span>`;
+  notification.classList.add('show');
+  clearTimeout(notification._timeout);
+  notification._timeout = setTimeout(() => {
+    notification.classList.remove('show');
+  }, 2500);
+}
+
+// ----------------- INIT -----------------
+document.addEventListener('DOMContentLoaded', () => {
+  renderCart();
+
+  // Close panels on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllPanels();
+  });
+});
+
+</script>
+</body>
+</html>
+<script src="/cookie-banner.js" defer></script>
