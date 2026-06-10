@@ -1,0 +1,14 @@
+# robots.txt para dalevidatienda.com
+# Le dice a Google qué páginas indexar y dónde está el sitemap
+
+User-agent: *
+Allow: /
+
+# No indexar páginas técnicas o privadas
+Disallow: /checkout.html
+Disallow: /success.html
+Disallow: /api/
+Disallow: /functions/
+
+# Sitemap para que Google encuentre todas las páginas
+Sitemap: https://dalevidatienda.com/sitemap.xml
