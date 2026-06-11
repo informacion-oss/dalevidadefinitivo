@@ -1,25 +1,44 @@
 # /_headers — Cabeceras de seguridad para Cloudflare Pages
+# Se aplican automáticamente al desplegar.
 
 /*
+  # Previene clickjacking — solo nosotros podemos embeber la web en iframes
   X-Frame-Options: SAMEORIGIN
+
+  # Bloquea esnifado MIME (que el navegador interprete archivos como HTML cuando no lo son)
   X-Content-Type-Options: nosniff
+
+  # Política de Referer — solo enviamos el origen al navegar fuera (no la URL completa con parámetros)
   Referrer-Policy: strict-origin-when-cross-origin
+
+  # HSTS — fuerza HTTPS durante 1 año
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Permissions Policy — desactiva APIs que no necesitamos (camera, mic, etc.)
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(self "https://js.stripe.com" "https://checkout.stripe.com"), fullscreen=(self)
+
+  # Content Security Policy — restringe de dónde puede cargar recursos la web
+  # Permitimos: nuestro dominio + Stripe + Resend + Cloudflare + WhatsApp + Google Fonts
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com https://cdn.tailwindcss.com https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://api.stripe.com https://www.google-analytics.com; frame-src https://js.stripe.com https://checkout.stripe.com https://wa.me; form-action 'self' https://checkout.stripe.com; base-uri 'self';
+
+  # Cross-Origin policies
   Cross-Origin-Opener-Policy: same-origin-allow-popups
 
+# Imágenes — cache agresivo de 1 año (no cambian)
 /assets/img/*
   Cache-Control: public, max-age=31536000, immutable
 
+# CSS y JS — cache de 1 año
 /assets/*.css
   Cache-Control: public, max-age=31536000, immutable
 
 /assets/*.js
   Cache-Control: public, max-age=31536000, immutable
 
+# HTML — cache corto (1 hora) para que los cambios se vean rápido
 /*.html
   Cache-Control: public, max-age=3600, must-revalidate
 
+# Functions (API) — NO cachear nunca
 /api/*
   Cache-Control: no-store, no-cache, must-revalidate
