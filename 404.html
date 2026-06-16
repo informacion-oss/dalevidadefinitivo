@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Página no encontrada | DaleVida</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root { --brand-dark:#2B5A3E; --brand-light:#7DC142; --brand-cream:#F7F5EE; }
+* { box-sizing:border-box; }
+body { font-family:'DM Sans',system-ui,sans-serif; background:var(--brand-cream); color:#191d17; margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; -webkit-font-smoothing:antialiased; }
+h1,h2 { font-family:'Plus Jakarta Sans',sans-serif; }
+.material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+.icon-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
+.btn-primary { background:var(--brand-dark); color:white; border:none; padding:14px 28px; border-radius:999px; font-weight:700; font-size:15px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; font-family:'Plus Jakarta Sans',sans-serif; }
+.btn-primary:hover { transform:scale(1.02); box-shadow:0 8px 20px rgba(43,90,62,0.25); }
+.btn-outline { background:transparent; border:1.5px solid var(--brand-dark); color:var(--brand-dark); padding:12px 24px; border-radius:999px; font-weight:600; font-size:14px; cursor:pointer; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:background 0.2s; font-family:'Plus Jakarta Sans',sans-serif; }
+.btn-outline:hover { background:#f7faf3; }
+@keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+.float { animation:float 3s ease-in-out infinite; }
+</style>
+</head>
+<body>
+  <div class="float mb-8">
+    <div style="width:120px;height:120px;background:linear-gradient(135deg,#2B5A3E,#7DC142);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;">
+      <span class="material-symbols-outlined text-white" style="font-size:52px;">search_off</span>
+    </div>
+  </div>
+
+  <p style="font-family:'Playfair Display',serif;font-size:80px;font-weight:800;color:#2B5A3E;line-height:1;margin:0 0 8px;">404</p>
+  <h1 style="font-size:24px;font-weight:700;color:#2B5A3E;margin:0 0 12px;">Página no encontrada</h1>
+  <p style="color:#41493e;font-size:15px;max-width:360px;line-height:1.6;margin:0 0 32px;">
+    La página que buscas no existe o ha sido movida. Pero tus suplementos te esperan en la tienda.
+  </p>
+
+  <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+    <a href="/" class="btn-primary">
+      <span class="material-symbols-outlined">home</span>
+      Ir al inicio
+    </a>
+    <a href="/productos.html" class="btn-outline">
+      <span class="material-symbols-outlined">shopping_bag</span>
+      Ver productos
+    </a>
+  </div>
+
+  <a href="/" style="display:block;margin-top:40px;font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#2B5A3E;text-decoration:none;letter-spacing:-0.02em;">DaleVida</a>
+</body>
+</html>
